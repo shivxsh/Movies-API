@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
+import Layout from './components/Layout';
+import Home from './components/home/Home';
 import api from './api/axiosConfig';
 import './App.css';
 
@@ -18,11 +21,18 @@ function App() {
 
   }
 
-
+  useEffect(() => {
+    getMovies();
+  }, [])
 
   return (
     <div className="App">
 
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path='/' element={<Home movies={movies} />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
