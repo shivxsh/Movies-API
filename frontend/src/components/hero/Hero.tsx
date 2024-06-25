@@ -22,11 +22,11 @@ const Hero = ({ movies }: Props) => {
         <div className='movie-carousel-container'>
             <Carousel>
                 {
-                    movies.map((movie) => {
+                    movies.map((movie, index) => {
                         return (
-                            <Paper>
+                            <Paper elevation={3} key={index}>
                                 <div className='movie-card-container'>
-                                    <div className='movie-card'>
+                                    <div className='movie-card' style={{ "--img": `url(${movie.backdrops[0]})` } as React.CSSProperties}>
                                         <div className="movie-detail">
                                             <div className="movie-poster">
                                                 <img src={movie.poster} alt="Movie Poster" />
