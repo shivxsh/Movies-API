@@ -58,18 +58,16 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }: Props) => {
                     <img src={movie?.poster} alt="Movie Poster" />
                 </Col>
                 <Col>
-                    <>
-                        <Row>
-                            <Col>
-                                <ReviewForm handleSubmit={addReview} revText={revText} labelText="Write a Review?" />
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <hr />
-                            </Col>
-                        </Row>
-                    </>
+                    <Row>
+                        <Col>
+                            <ReviewForm handleSubmit={addReview} revText={revText} labelText="Write a Review?" />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <hr />
+                        </Col>
+                    </Row>
                     {reviews?.map((r) => (
                         <Row key={r.id}>
                             <Col>{r.body}</Col>
