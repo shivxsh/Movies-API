@@ -1,6 +1,6 @@
 import Hero from '../hero/Hero';
 
-interface Movie {
+export interface Movie {
     imdbId: string;
     title: string;
     releaseDate: string;
